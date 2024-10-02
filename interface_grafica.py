@@ -19,10 +19,13 @@ if r.lower() != 'n':
         z = float(input('Quantidade vendida:'))
         y.append(z)
 
-    plt.plot(x, y, label='dados')
+    plt.plot(x, y, label='Dados')
     plt.xlabel('Número de produtos')
     plt.ylabel('Quantidade de vendas')
     plt.title('Gráfico Expositório')
+    plt.yticks(y)
+    plt.xticks(x)
+    plt.legend()
     plt.show()
 else:
     print('Tudo bem, OBRIGADO!')
