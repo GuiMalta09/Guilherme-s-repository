@@ -1,29 +1,28 @@
 import matplotlib.pyplot as plt
-import sys
 import numpy as np
 
-x = [ ]
-y = [ ]
+x = []
+y = []
 
-print('Você gostaria de montar um gráfico? (s/n): ')
-r = input('s caso SIM e n caso NÃO: ') 
-if r != 's':
-    print('PARA QUÊ VOCÊ ME INICOU?')
+print("""Você gostaria de montar um gráfico?:\n 
+    Digite s -> SIM e n -> NÃO\n
+      """)
 
-else:   
-    cnt1 = 0
-    nmr = int(input('nmr:'))
-    for i in range(0, nmr):
-        n = float(input('n:'))
+r = input('Resposta:') 
+if r.lower() != 'n':
+    nmr = int(input('Quantidade de produtos:'))
+    for i in range(nmr):
+        n = float(input('Numeração dos produtos:'))
         x.append(n)
-        cnt1 += 1 
-
-    cnt2 = 0
-    for i in range(0, nmr):
-        z = float(input('z:'))
+         
+    for i in range(nmr):
+        z = float(input('Quantidade vendida:'))
         y.append(z)
-        cnt2 += 1 
 
-
-plt.plot(x,y)
-plt.show()
+    plt.plot(x, y, label='dados')
+    plt.xlabel('Número de produtos')
+    plt.ylabel('Quantidade de vendas')
+    plt.title('Gráfico Expositório')
+    plt.show()
+else:
+    print('Tudo bem, OBRIGADO!')
